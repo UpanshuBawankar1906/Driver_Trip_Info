@@ -10,5 +10,10 @@ public interface DriverService
 
     List<Drivers> getAll();
 
-    
+
+    Drivers update(Drivers drivers);
+
+    void delete(int id);
+
+    Drivers getById(int id);
 }

@@ -22,5 +22,20 @@ public class DriverServiceImpl implements DriverService{
         return repo.getAll();
     }
 
+    @Override
+    public Drivers update(Drivers drivers){
+        return repo.update(drivers);
+    }
+
+    @Override
+    public void delete(int id){
+        repo.delete(id);
+    }
+
+    @Override
+    public Drivers getById(int id) {
+        return repo.getById(id);
+    }
+
 
 }

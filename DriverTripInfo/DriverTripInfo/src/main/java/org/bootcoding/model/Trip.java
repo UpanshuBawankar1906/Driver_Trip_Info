@@ -10,8 +10,9 @@ import lombok.NoArgsConstructor;
 public class Trip {
     private String d_name;
     private int d_id;
+    private int t_id;
     private String start_location;
     private String end_location;
     private double distance;
-    private double fare;
+    private double faire;
 }
