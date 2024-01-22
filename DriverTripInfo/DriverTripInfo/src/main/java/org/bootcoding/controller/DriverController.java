@@ -1,7 +1,9 @@
 package org.bootcoding.controller;
 
 import org.bootcoding.model.Drivers;
+import org.bootcoding.model.Trip;
 import org.bootcoding.service.DriverService;
+import org.bootcoding.service.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
@@ -45,4 +47,8 @@ public class DriverController {
     public Drivers getById(@PathVariable int id){
         return driverService.getById(id);
     }
+
+    //trip
+
+
 }
