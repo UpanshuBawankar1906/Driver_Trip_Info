@@ -13,6 +13,6 @@ public class Trip {
     private String drivername;
     private String start_location;
     private String end_location;
-    private float distance;
+    private int distance;
     private double fare;
 }
