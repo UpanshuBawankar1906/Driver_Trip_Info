@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Trip {
-    private int tripid;
+    private int id;
     private int driverid;
     private String drivername;
     private String start_location;
     private String end_location;
-    private double distance;
+    private float distance;
     private double fare;
 }
