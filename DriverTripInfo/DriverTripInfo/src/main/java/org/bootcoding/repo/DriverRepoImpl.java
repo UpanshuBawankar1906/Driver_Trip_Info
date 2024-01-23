@@ -32,7 +32,7 @@ public class DriverRepoImpl implements DriverRepo {
 
     @Override
     public Drivers update(Drivers drivers){
-        // update drivers set id=?, name=?, phoneno=?, licenseno=?, address=?, age=?, gender=?, exp=? where id = ?;
+
         jdbcTemplate.update("update drivers set name=? , phoneno=? , licenseno=? , address=? , " +
                 "age=? , gender=? , exp=? where id=?", drivers.getName(), drivers.getPhone_no(),
                 drivers.getLicense_no(), drivers.getAddress(), drivers.getAge(),drivers.getGender(),drivers.getExp(),drivers.getId());
