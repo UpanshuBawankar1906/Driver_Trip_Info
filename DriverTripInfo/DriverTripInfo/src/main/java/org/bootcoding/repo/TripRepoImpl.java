@@ -25,7 +25,7 @@ public class TripRepoImpl implements TripRepo{
     public List<Trip> getAll() {
         return jdbcTemplate.query("select * from trip",(rs,rowNum) ->{
             return new Trip(rs.getInt(1),rs.getInt(2),rs.getString(3)
-            ,rs.getString(4),rs.getString(5),rs.getFloat(6),
+            ,rs.getString(4),rs.getString(5),rs.getInt(6),
                     rs.getDouble(7));
         });
     }
@@ -33,10 +33,12 @@ public class TripRepoImpl implements TripRepo{
     @Override
     public Trip update(Trip trip){
 
+        System.out.println(trip.getDistance());
+
         jdbcTemplate.update("update trip set driverid=? , drivername=? , start_location=? , end_location=? , " +
-                        "distance=? , fare=?  where id=?",  trip.getId(), trip.getDriverid(),
+                        "distance=? , fare=?  where id=?",  trip.getDriverid(),
                 trip.getDrivername(), trip.getStart_location(), trip.getEnd_location(), trip.getDistance(),
-                trip.getFare());
+                trip.getFare(), trip.getId());
         return trip;
     }
 
@@ -50,7 +52,7 @@ public class TripRepoImpl implements TripRepo{
     public Trip getById(int id) {
         return jdbcTemplate.queryForObject("select * from trip where id=?", (rs, rowNum) -> {
             return new Trip(rs.getInt(1), rs.getInt(2), rs.getString(3),
-                    rs.getString(4), rs.getString(5),rs.getFloat(6),
+                    rs.getString(4), rs.getString(5),rs.getInt(6),
                     rs.getDouble(7));}, id);
     }
 }
