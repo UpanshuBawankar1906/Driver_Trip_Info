@@ -17,15 +17,17 @@ public class DriverRepoImpl implements DriverRepo {
         jdbcTemplate.update("INSERT into drivers(id,name,phoneno,licenseno,address,age,gender,exp) " +
                         "values(?,?,?,?,?,?,?,?)",
                 drivers.getId(),drivers.getName(),drivers.getPhone_no(),drivers.getLicense_no()
-                ,drivers.getAddress(),drivers.getAge(),drivers.getGender(),drivers.getExp());
+                ,drivers.getAddress(),
+                drivers.getAge(),drivers.getGender(),drivers.getExp());
         return drivers;
     }
 
     @Override
     public List<Drivers> getAll() {
         return jdbcTemplate.query("select * from drivers",(rs,rowNum) ->{
-            return new Drivers(rs.getInt(1),rs.getString(2),rs.getString(3)
-            ,rs.getString(4),rs.getString(5),rs.getInt(6),
+            return new Drivers(rs.getInt(1),rs.getString(2),
+                    rs.getString(3),rs.getString(4),
+                    rs.getString(5),rs.getInt(6),
                     rs.getString(7), rs.getInt(8));
         });
     }
