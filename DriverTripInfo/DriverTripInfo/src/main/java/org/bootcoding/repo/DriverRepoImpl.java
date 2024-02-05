@@ -16,8 +16,8 @@ public class DriverRepoImpl implements DriverRepo {
     public Drivers insert(Drivers drivers) {
         jdbcTemplate.update("INSERT into drivers(id,name,phoneno,licenseno,address,age,gender,exp) " +
                         "values(?,?,?,?,?,?,?,?)",
-                drivers.getId(),drivers.getName(),drivers.getPhone_no(),drivers.getLicense_no()
-                ,drivers.getAddress(),
+                drivers.getId(),drivers.getName(),drivers.getPhone_no(),
+                drivers.getLicense_no(),drivers.getAddress(),
                 drivers.getAge(),drivers.getGender(),drivers.getExp());
         return drivers;
     }
