@@ -29,6 +29,4 @@ public class DriverServiceImpl implements DriverService{
     public Drivers getById(int id) {
         return repo.getById(id);
     }
-
-
 }
