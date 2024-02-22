@@ -1,5 +1,4 @@
 package org.bootcoding.controller;
-
 import org.bootcoding.model.Drivers;
 import org.bootcoding.model.Trip;
 import org.bootcoding.service.DriverService;
@@ -9,9 +8,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
 @RestController
 public class DriverController {
 
